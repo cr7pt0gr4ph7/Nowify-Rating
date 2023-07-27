@@ -152,7 +152,7 @@ export default {
         )
         const audioFeaturesJson = await audioFeaturesResponse.json();
 
-        data.audioFeatures = audioFeaturesJson;
+        data.audioFeatures = audioFeaturesJson.audio_features[0];
 
         this.playerResponse = data
       } catch (error) {
@@ -208,6 +208,7 @@ export default {
         playing: false,
         trackAlbum: {},
         trackArtists: [],
+        trackBpm: 90,
         trackId: '',
         trackTitle: ''
       }
@@ -235,6 +236,16 @@ export default {
       document.documentElement.style.setProperty(
         '--colour-background-now-playing',
         this.colourPalette.background
+      )
+    },
+
+    /**
+     * Set the song BPM based on the received metadata.
+     */
+    setSongBpm() {
+      document.documentElement.style.setProperty(
+        '--song-bpm-now-playing',
+        this.playerData.trackBpm
       )
     },
 
@@ -281,7 +292,8 @@ export default {
         trackAlbum: {
           title: this.playerResponse.item.album.name,
           image: this.playerResponse.item.album.images[0].url
-        }
+        },
+        trackBpm: this.playerResponse.audioFeatures.tempo
       }
     },
 
@@ -344,6 +356,7 @@ export default {
       this.$emit('spotifyTrackUpdated', this.playerData)
 
       this.$nextTick(() => {
+        this.setSongBpm()
         this.getAlbumColours()
       })
     }
