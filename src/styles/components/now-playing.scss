@@ -74,6 +74,15 @@
       margin: var(--spacing-m);
       padding: var(--spacing-m);
       text-align: center;
+
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 48
     }
   }
 
