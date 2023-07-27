@@ -51,9 +51,10 @@
   
   &__pulses {
     position: relative;
-    --pulse-cycle-duration: 5s;
+    --pulse-cycle-bpm: var(--song-bpm-now-playing);
+    --pulse-cycle-duration: calc(var(--pulse-cycle-wave-duration)*var(--pulse-cycle-wave-count));
     --pulse-cycle-wave-count: 5;
-    --pulse-cycle-wave-duration: calc(var(--pulse-cycle-duration)/var(--pulse-cycle-wave-count));
+    --pulse-cycle-wave-duration: calc(60s/var(--pulse-cycle-bpm));
    }
 
   &__pulse {
