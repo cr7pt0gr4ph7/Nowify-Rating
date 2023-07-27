@@ -4,6 +4,17 @@
  * Styles for the 'Now Playing' screen.
  *
  */
+@keyframes growAndFade {
+  0% {
+    opacity: .25;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
 .now-playing {
   background-color: var(--colour-background-now-playing);
   color: var(--color-text-primary);
@@ -31,12 +42,42 @@
   &__cover {
     max-width: 400px;
   }
+  
+  &__pulses {
+    position: relative;
+    --pulse-cycle-duration: 3s;
+    --pulse-cycle-wave-count: 3;
+    --pulse-cycle-wave-duration: calc(var(--pulse-cycle-duration)/var(--pulse-cycle-wave-count));
+   }
+
+  &__pulse {
+    animation: growAndFade var(--pulse-cycle-duration) infinite ease-out;
+    background-color: dodgerblue;
+    border-radius: 1rem;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    &.wave1 {
+      animation-delay: calc(var(--pulse-cycle-wave-duration)*1);    
+    }
+    &.wave2 {
+      animation-delay: calc(var(--pulse-cycle-wave-duration)*2); 
+    }
+    &.wave3 {
+      animation-delay: calc(var(--pulse-cycle-wave-duration)*3);
+    }
+  }
 
   &__image {
     box-shadow: 1px 1px 16px -2px rgba(0, 0, 0, .3);
     height: auto;
     max-width: 60vw;
     width: 100%;
+    z-index: 2;
+    position: relative;
   }
 
   &__details {
