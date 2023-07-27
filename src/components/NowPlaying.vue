@@ -143,7 +143,7 @@ export default {
         data = await response.json()
 
         const audioFeaturesResponse = await fetch(
-          `${this.endpoints.base}/${this.endpoints.audioFeatures}?ids=${this.playerResponse.item.id}`,
+          `${this.endpoints.base}/${this.endpoints.audioFeatures}?ids=${data.item.id}`,
           {
             headers: {
               Authorization: `Bearer ${this.auth.accessToken}`
