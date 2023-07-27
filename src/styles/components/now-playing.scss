@@ -31,7 +31,7 @@
       padding: 0;
       width: 100%
   }
-  
+
   &__cover,
   &__details {
     padding: var(--spacing-m);
@@ -48,7 +48,7 @@
     position: relative;
     z-index: 2;
   }
-  
+
   &__pulses {
     position: relative;
     --pulse-cycle-bpm-factor: 1;
@@ -128,6 +128,12 @@
       background-color: rgba(255, 255, 255, 0.5);
       margin: var(--spacing-m);
       padding: var(--spacing-l);
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      overflow: hidden;
+      text-align: center;
+      cursor: pointer;
+
       text-align: center;
       cursor: pointer;
 
@@ -148,22 +154,22 @@
         --rating-color--primary: #ee1b24;
         --rating-color--dark: #71420d;
       }
-      
+
       &.rating-dissatisfied {
         --rating-color--primary: #f9931f;
         --rating-color--dark: #af630d;
       }
-      
+
       &.rating-neutral {
         --rating-color--primary: #fcee21;
        --rating-color--dark: #898109;
       }
-      
+  
       &.rating-satisfied {
         --rating-color--primary: #8cc63e;
         --rating-color--dark: #3e6d00;
       }
-      
+
       &.rating-very-satisfied {
         --rating-color--primary: #009443;
         --rating-color--dark: #003306;
