@@ -77,22 +77,42 @@
 
       &.rating-very-dissatisfied .rating-option__icon {
         color: #ee1b24;
+
+        .material-symbols-outlined {
+          background-color: #71420d;
+        }
       }
       
       &.rating-dissatisfied .rating-option__icon {
         color: #f9931f;
+
+        .material-symbols-outlined {
+          background-color: #898109;
+        }
       }
       
       &.rating-neutral .rating-option__icon {
         color: #fcee21;
+
+        .material-symbols-outlined {
+          background-color: #898109;
+        }
       }
       
       &.rating-satisfied .rating-option__icon {
         color: #8cc63e;
+
+        .material-symbols-outlined {
+          background-color: #3e6d00;
+        }
       }
       
       &.rating-very-satisfied .rating-option__icon {
         color: #009443;
+
+        .material-symbols-outlined {
+          background-color: #003306;
+        }
       }
     }
 
