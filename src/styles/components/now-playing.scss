@@ -34,16 +34,13 @@
 
   &__cover,
   &__details {
+    padding: var(--spacing-m);
     text-align: center;
     width: 100%;
   }
 
   &__cover {
     max-width: 400px;
-  }
-
-  &__details {
-    padding: var(--spacing-m);
   }
 
   &__details,
@@ -95,7 +92,6 @@
     width: 100%;
     z-index: 2;
     position: relative;
-    margin: var(--spacing-m);
   }
 
   &__details {
@@ -132,6 +128,12 @@
       background-color: rgba(255, 255, 255, 0.5);
       margin: var(--spacing-m);
       padding: var(--spacing-l);
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      overflow: hidden;
+      text-align: center;
+      cursor: pointer;
+
       text-align: center;
       cursor: pointer;
 
