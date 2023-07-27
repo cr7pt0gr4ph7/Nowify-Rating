@@ -7,11 +7,11 @@
 @keyframes growAndFade {
   0% {
     opacity: .25;
-    transform: scale(0.5);
+    transform: scale(0.25);
   }
   100% {
     opacity: 0;
-    transform: scale(1.5);
+    transform: scale(1.25);
   }
 }
 
@@ -45,8 +45,8 @@
   
   &__pulses {
     position: relative;
-    --pulse-cycle-duration: 3s;
-    --pulse-cycle-wave-count: 3;
+    --pulse-cycle-duration: 5s;
+    --pulse-cycle-wave-count: 5;
     --pulse-cycle-wave-duration: calc(var(--pulse-cycle-duration)/var(--pulse-cycle-wave-count));
    }
 
@@ -68,6 +68,12 @@
     }
     &.wave3 {
       animation-delay: calc(var(--pulse-cycle-wave-duration)*3);
+    }
+    &.wave4 {
+      animation-delay: calc(var(--pulse-cycle-wave-duration)*4);
+    }
+    &.wave5 {
+      animation-delay: calc(var(--pulse-cycle-wave-duration)*5);
     }
   }
 
