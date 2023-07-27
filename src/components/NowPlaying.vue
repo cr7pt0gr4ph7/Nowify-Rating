@@ -31,13 +31,13 @@
           </div>
           <div class="rating-option__text">Neutral</div>
         </div>
-        <div class="rating-option rating-ok">
+        <div class="rating-option rating-satisfied">
           <div class="rating-option__icon">
             <span class="material-symbols-outlined">sentiment_satisfied</span>
           </div>
           <div class="rating-option__text">Good</div>
         </div>
-        <div class="rating-option rating-satisfied">
+        <div class="rating-option rating-very-satisfied">
           <div class="rating-option__icon">
             <span class="material-symbols-outlined">sentiment_very_satisfied</span>
           </div>
