@@ -5,20 +5,50 @@
       class="now-playing"
       :class="getNowPlayingClass()"
     >
-      <div class="now-playing__cover">
-        <img
-          :src="player.trackAlbum.image"
-          :alt="player.trackTitle"
-          class="now-playing__image"
-        />
+      <div class="now-playing__container">
+        <div class="now-playing__cover">
+          <img
+            :src="player.trackAlbum.image"
+            :alt="player.trackTitle"
+            class="now-playing__image"
+          />
+        </div>
+        <div class="now-playing__details">
+          <h1 class="now-playing__track" v-text="player.trackTitle"></h1>
+          <h2 class="now-playing__artists" v-text="getTrackArtists"></h2>
+        </div>
       </div>
-      <div class="now-playing__details">
-        <h1 class="now-playing__track" v-text="player.trackTitle"></h1>
-        <h2 class="now-playing__artists" v-text="getTrackArtists"></h2>
+      <div class="now-playing__rating">
+        <div class="rating-option rating-dissatisfied">
+          <div class="rating-option__icon">
+            <span class="material-symbols-outlined">sentiment_dissatisfied</span>
+          </div>
+          <div class="rating-option__text">Meh!</div>
+        </div>
+        <div class="rating-option rating-neutral">
+          <div class="rating-option__icon">
+            <span class="material-symbols-outlined">sentiment_neutral</span>
+          </div>
+          <div class="rating-option__text">Neutral</div>
+        </div>
+        <div class="rating-option rating-ok">
+          <div class="rating-option__icon">
+            <span class="material-symbols-outlined">sentiment_satisfied</span>
+          </div>
+          <div class="rating-option__text">Good</div>
+        </div>
+        <div class="rating-option rating-satisfied">
+          <div class="rating-option__icon">
+            <span class="material-symbols-outlined">sentiment_very_satisfied</span>
+          </div>
+          <div class="rating-option__text">Great!</div>
+        </div>
       </div>
     </div>
     <div v-else class="now-playing" :class="getNowPlayingClass()">
-      <h1 class="now-playing__idle-heading">No music is playing 😔</h1>
+      <div class="now-playing__container">
+        <h1 class="now-playing__idle-heading">No music is playing 😔</h1>
+      </div>
     </div>
   </div>
 </template>
