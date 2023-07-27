@@ -75,9 +75,32 @@
       padding: var(--spacing-m);
       text-align: center;
 
+      &.rating-very-dissatisfied .rating-option__icon {
+        color: #ee1b24;
+      }
+      
+      &.rating-dissatisfied .rating-option__icon {
+        color: #f9931f;
+      }
+      
+      &.rating-neutral .rating-option__icon {
+        color: #fcee21;
+      }
+      
+      &.rating-satisfied .rating-option__icon {
+        color: #8cc63e;
+      }
+      
+      &.rating-very-satisfied .rating-option__icon {
+        color: #009443;
+      }
     }
 
     .material-symbols-outlined {
+        /* Simulate a character outline */
+        border-radius: 50%;
+        background-color: #000000;
+
       font-variation-settings:
       'FILL' 0,
       'wght' 400,
