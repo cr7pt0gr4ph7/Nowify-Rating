@@ -67,14 +67,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;  
-  }
-
-  &__rating-option {
+    
+    .rating-option {
       width: 10em;
       background-color: rgba(255, 255, 255, 0.5);
       margin: var(--spacing-m);
       padding: var(--spacing-m);
       text-align: center;
+    }
   }
 
   @media only screen and (min-width: 767px) {
