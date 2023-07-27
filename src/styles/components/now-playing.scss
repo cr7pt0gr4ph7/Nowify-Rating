@@ -13,6 +13,14 @@
   padding: var(--spacing-l);
   width: 100%;
 
+  &__container {
+      display: flex;
+      flex-flow: column nowrap;
+      height: 100%;
+      padding: 0;
+      width: 100%
+  }
+  
   &__cover,
   &__details {
     padding: var(--spacing-m);
@@ -54,9 +62,27 @@
     justify-content: center;
   }
 
+  &__rating {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;  
+  }
+
+  &__rating-option {
+      width: 10em;
+      background-color: rgba(255, 255, 255, 0.5);
+      margin: var(--spacing-m);
+      padding: var(--spacing-m);
+      text-align: center;
+  }
+
   @media only screen and (min-width: 767px) {
-    flex-flow: row nowrap;
     padding: 10%;
+
+    &__container {
+        flex-flow: row nowrap;
+    }
 
     &__cover,
     &__details {
