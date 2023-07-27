@@ -150,8 +150,9 @@ export default {
             }
           }
         )
+        const audioFeaturesJson = await audioFeaturesResponse.json();
 
-        data.audioFeatures = audioFeaturesResponse;
+        data.audioFeatures = audioFeaturesJson;
 
         this.playerResponse = data
       } catch (error) {
