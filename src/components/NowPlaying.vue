@@ -141,6 +141,18 @@ export default {
         }
 
         data = await response.json()
+
+        const audioFeaturesResponse = await fetch(
+          `${this.endpoints.base}/${this.endpoints.audioFeatures}?ids=${this.playerResponse.item.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${this.auth.accessToken}`
+            }
+          }
+        )
+
+        data.audioFeatures = audioFeaturesResponse;
+
         this.playerResponse = data
       } catch (error) {
         this.handleExpiredToken()
