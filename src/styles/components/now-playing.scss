@@ -42,6 +42,12 @@
   &__cover {
     max-width: 400px;
   }
+
+  &__details,
+  &__rating {
+    position: relative;
+    z-index: 2;
+  }
   
   &__pulses {
     position: relative;
