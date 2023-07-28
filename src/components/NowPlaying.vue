@@ -119,7 +119,7 @@ export default {
       if (this.playerData.trackTitle == "") {
         return ""
       }
-      return this.playerData.trackTitle + " - " + this.playerData.artists.join(", ")
+      return this.playerData.trackTitle + " - " + this.playerData.trackArtists.join(", ")
     },
 
     /**
