@@ -353,7 +353,7 @@ export default {
       this.colourPalette = {
         text: mainColours.text,
         background: mainColors.background,
-        backgroundSecondary: secondaryColors.background
+        backgroundSecondary: secondaryColours.background
       }
 
       this.$nextTick(() => {
