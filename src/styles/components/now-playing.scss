@@ -146,14 +146,19 @@
       border-radius: 0.2rem;
       width: 10rem;
       background-color: rgba(255, 255, 255, 0.5);
-      margin: var(--spacing-m);
-      padding: var(--spacing-l);
       -webkit-transition-duration: 0.4s; /* Safari */
       transition-duration: 0.4s;
       overflow: visible;
       text-align: center;
       cursor: pointer;
       position: relative;
+
+      margin: var(--spacing-m);
+      padding: var(--spacing-s);
+
+      @media only screen and (min-width: 767px) {
+        padding: var(--spacing-l);
+      }
 
       /* Click animation */
       &:after {
@@ -227,7 +232,7 @@
       border-radius: 50%;
       clip-path: circle(47%);
       background-color: #000000;
-      font-size: 5rem;
+      font-size: calc(max(3rem, min(5rem, 6vw)));
 
       font-variation-settings:
         'FILL' 0,
