@@ -352,7 +352,7 @@ export default {
       
       this.colourPalette = {
         text: mainColours.text,
-        background: mainColors.background,
+        background: mainColours.background,
         backgroundSecondary: secondaryColours.background
       }
 
