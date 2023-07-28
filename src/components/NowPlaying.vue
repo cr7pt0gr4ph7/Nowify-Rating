@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="now-playing-app">
     <div
       v-if="player.playing"
       class="now-playing"
