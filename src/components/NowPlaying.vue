@@ -28,25 +28,25 @@
       <div class="now-playing__rating">
         <div class="now-playing__question">How do you like the current music?</div>
         <div class="now-playing__ratings">
-          <div class="rating-option rating-dissatisfied">
+          <div class="rating-option rating-dissatisfied" @click="sendFeedback(2)">
             <div class="rating-option__icon">
               <span class="material-symbols-outlined">sentiment_dissatisfied</span>
             </div>
             <div class="rating-option__text">Meh!</div>
           </div>
-          <div class="rating-option rating-neutral">
+          <div class="rating-option rating-neutral" @click="sendFeedback(3)">
             <div class="rating-option__icon">
               <span class="material-symbols-outlined">sentiment_neutral</span>
             </div>
             <div class="rating-option__text">Neutral</div>
           </div>
-          <div class="rating-option rating-satisfied">
+          <div class="rating-option rating-satisfied" @click="sendFeedback(4)">
             <div class="rating-option__icon">
               <span class="material-symbols-outlined">sentiment_satisfied</span>
             </div>
             <div class="rating-option__text">Good</div>
           </div>
-          <div class="rating-option rating-very-satisfied">
+          <div class="rating-option rating-very-satisfied" @click="sendFeedback(5)">
             <div class="rating-option__icon">
               <span class="material-symbols-outlined">sentiment_very_satisfied</span>
             </div>
@@ -106,6 +106,22 @@ export default {
   },
 
   methods: {
+    /**
+     * Make the network request to Google Forms to record a selected feedback button.
+     */
+    async sendFeedback(sentimentNumber) {
+      /* TODO: Extract this into a separate endpoint property */
+      let songName = this.getSongNameAndArtist()
+      await fetch(`https://docs.google.com/forms/d/e/1FAIpQLSdllaBvx8fsxDINUnXaRtRnKjANfxCX--5RUl0ts7JVjhgOKQ/formResponse?submit=Submit&usp=pp_url&entry.1463587533=${sentimentNumber}&entry.545794514=${songName}`)
+    },
+
+    getSongNameAndArtist() {
+      if (this.playerData.trackTitle == "") {
+        return ""
+      }
+      return this.playerData.trackTitle + " - " + this.playerData.trackArtists.join(", ")
+    },
+
     /**
      * Make the network request to Spotify to
      * get the current played track.
