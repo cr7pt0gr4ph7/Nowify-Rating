@@ -48,7 +48,7 @@
             </div>
             <div class="rating-option__text">Good</div>
           </div>
-          <div class="rating-option rating-very-satisfied" @click="sendPrimaryFeedback(5)">
+          <div class="rating-option rating-very-satisfied" @click="sendPrimaryFeedback(5, true)">
             <div class="rating-option__icon">
               <span class="material-symbols-outlined">sentiment_very_satisfied</span>
             </div>
@@ -145,7 +145,7 @@ export default {
       await fetch(`https://docs.google.com/forms/d/e/1FAIpQLSdllaBvx8fsxDINUnXaRtRnKjANfxCX--5RUl0ts7JVjhgOKQ/formResponse?submit=Submit&usp=pp_url&entry.1463587533=${sentimentNumber}&entry.545794514=${songName}&entry.1789954540=${suggestion}`)
     },
 
-    async sendPrimaryFeedback(sentimentNumber) {
+    async sendPrimaryFeedback(sentimentNumber, sendImmediately) {
       let songName = this.getSongNameAndArtist()
       this.feedbackDeferred = {
         song: songName,
@@ -158,6 +158,10 @@ export default {
         this.feedbackTimeout = null
       }
 
+      if (sendImmediately) {
+        sendAdditionalFeedback("")
+      }
+     
       this.feedbackTimeout = setTimeout(() => this.sendAdditionalFeedback(""), 10 * 1000)
     },
 
