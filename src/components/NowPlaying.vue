@@ -159,7 +159,7 @@ export default {
       }
 
       if (sendImmediately) {
-        sendAdditionalFeedback("")
+        this.sendAdditionalFeedback("")
       }
      
       this.feedbackTimeout = setTimeout(() => this.sendAdditionalFeedback(""), 10 * 1000)
