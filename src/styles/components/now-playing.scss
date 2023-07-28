@@ -147,7 +147,7 @@
     
     .rating-option {
       border-radius: 0.2rem;
-      width: 10rem;
+      width: calc(min(10rem, 23%));
       background-color: rgba(255, 255, 255, 0.5);
       -webkit-transition-duration: 0.4s; /* Safari */
       transition-duration: 0.4s;
@@ -156,7 +156,7 @@
       cursor: pointer;
       position: relative;
 
-      margin: var(--spacing-m);
+      margin: var(--spacing-m) 0;
       padding: var(--spacing-s);
 
       @media only screen and (min-width: 767px) {
