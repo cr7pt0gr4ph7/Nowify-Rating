@@ -33,6 +33,7 @@
     padding: 0;
     width: 100%;
     align-items: center;
+    justify-content: center;
   }
 
   &__cover,
@@ -253,7 +254,8 @@
 
     &__container {
       flex-flow: row nowrap;
-      align-items: normal;
+      align-items: center;
+      justify-content: center;
     }
 
     &__cover,
