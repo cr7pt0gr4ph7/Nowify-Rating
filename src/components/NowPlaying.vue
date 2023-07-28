@@ -293,8 +293,28 @@ export default {
           title: this.playerResponse.item.album.name,
           image: this.playerResponse.item.album.images[0].url
         },
-        trackBpm: this.playerResponse.audioFeatures.tempo
+        trackBpm: clampBpmRange(this.playerResponse.audioFeatures.tempo)
       }
+    },
+
+    /**
+     * Clamp the detected BPM value to a sensible range.
+     * @return {Number}
+     */
+    clampBpmRange(detectedBpm) {
+      const lowerBound = 50
+      const upperBound = 135
+      var bpm = detectedBpm
+
+      while (bpm > upperBound) {
+        bpm = bpm / 2
+      }
+
+      while (bpm < lowerBound) {
+        bpm = bpm * 2
+      }
+  
+      return bpm
     },
 
     /**
