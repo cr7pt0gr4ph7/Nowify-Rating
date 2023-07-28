@@ -34,25 +34,25 @@
             <div class="rating-option__icon">
               <span class="material-symbols-outlined">sentiment_dissatisfied</span>
             </div>
-            <div class="rating-option__text">Meh!<br/>&nbsp;</div>
+            <div class="rating-option__text">Meh!</div>
           </div>
           <div class="rating-option rating-neutral" @click="sendPrimaryFeedback(3)">
             <div class="rating-option__icon">
               <span class="material-symbols-outlined">sentiment_neutral</span>
             </div>
-            <div class="rating-option__text">Neutral<br/>&nbsp;</div>
+            <div class="rating-option__text">Neutral</div>
           </div>
           <div class="rating-option rating-satisfied" @click="sendPrimaryFeedback(4)">
             <div class="rating-option__icon">
               <span class="material-symbols-outlined">sentiment_satisfied</span>
             </div>
-            <div class="rating-option__text">Good<br/>&nbsp;</div>
+            <div class="rating-option__text">Good</div>
           </div>
           <div class="rating-option rating-very-satisfied" @click="sendPrimaryFeedback(5, true)">
             <div class="rating-option__icon">
               <span class="material-symbols-outlined">sentiment_very_satisfied</span>
             </div>
-            <div class="rating-option__text">Great!<br/>&nbsp;</div>
+            <div class="rating-option__text">Great!</div>
           </div>
         </div>
       </div>
