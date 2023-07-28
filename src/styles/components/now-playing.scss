@@ -50,6 +50,9 @@
   }
 
   &__pulses {
+    aspect-ratio: 1 / 1;
+    max-width: 100%;
+    max-height: 100%;
     position: relative;
     --pulse-cycle-bpm-factor: 1;
     --pulse-cycle-bpm: calc(var(--song-bpm-now-playing)/var(--pulse-cycle-bpm-factor));
