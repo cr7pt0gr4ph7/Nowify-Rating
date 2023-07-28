@@ -17,7 +17,7 @@ html, body {
   line-height: var(--body-line-height);
 }
 
-#app {
+#app, #now-playing-app {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: #2c3e50;
