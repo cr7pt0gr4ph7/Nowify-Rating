@@ -390,7 +390,7 @@ export default {
      */
     clampBpmRange(detectedBpm) {
       const lowerBound = 50
-      const upperBound = 135
+      const upperBound = 129
       var bpm = detectedBpm
 
       while (bpm > upperBound) {
