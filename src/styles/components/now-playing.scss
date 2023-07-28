@@ -126,6 +126,11 @@
 
   &__rating {
     display: flex;
+    flex-flow: column nowrap;
+  }
+
+  &__ratings {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;  
