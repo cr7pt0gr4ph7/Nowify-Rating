@@ -26,29 +26,32 @@
         </div>
       </div>
       <div class="now-playing__rating">
-        <div class="rating-option rating-dissatisfied">
-          <div class="rating-option__icon">
-            <span class="material-symbols-outlined">sentiment_dissatisfied</span>
+        <div class="now-playing__question">How do you like the current music?</div>
+        <div class="now-playing__ratings">
+          <div class="rating-option rating-dissatisfied">
+            <div class="rating-option__icon">
+              <span class="material-symbols-outlined">sentiment_dissatisfied</span>
+            </div>
+            <div class="rating-option__text">Meh!</div>
           </div>
-          <div class="rating-option__text">Meh!</div>
-        </div>
-        <div class="rating-option rating-neutral">
-          <div class="rating-option__icon">
-            <span class="material-symbols-outlined">sentiment_neutral</span>
+          <div class="rating-option rating-neutral">
+            <div class="rating-option__icon">
+              <span class="material-symbols-outlined">sentiment_neutral</span>
+            </div>
+            <div class="rating-option__text">Neutral</div>
           </div>
-          <div class="rating-option__text">Neutral</div>
-        </div>
-        <div class="rating-option rating-satisfied">
-          <div class="rating-option__icon">
-            <span class="material-symbols-outlined">sentiment_satisfied</span>
+          <div class="rating-option rating-satisfied">
+            <div class="rating-option__icon">
+              <span class="material-symbols-outlined">sentiment_satisfied</span>
+            </div>
+            <div class="rating-option__text">Good</div>
           </div>
-          <div class="rating-option__text">Good</div>
-        </div>
-        <div class="rating-option rating-very-satisfied">
-          <div class="rating-option__icon">
-            <span class="material-symbols-outlined">sentiment_very_satisfied</span>
+          <div class="rating-option rating-very-satisfied">
+            <div class="rating-option__icon">
+              <span class="material-symbols-outlined">sentiment_very_satisfied</span>
+            </div>
+            <div class="rating-option__text">Great!</div>
           </div>
-          <div class="rating-option__text">Great!</div>
         </div>
       </div>
     </div>
