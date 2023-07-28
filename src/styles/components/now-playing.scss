@@ -17,6 +17,8 @@
 
 .now-playing {
   background-color: var(--colour-background-now-playing);
+  background: radial-gradient(circle at bottom left, var(--colour-secondary-background-now-playing), var(--colour-background-now-playing));
+  /* background: radial-gradient(circle at bottom left, rgba(255,255,255,0.8), rgba(255,255,255,0)), linear-gradient(var(--colour-background-now-playing), var(--colour-background-now-playing)); */
   color: var(--color-text-primary);
   display: flex;
   flex-flow: column nowrap;
