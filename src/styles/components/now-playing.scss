@@ -25,11 +25,12 @@
   width: 100%;
 
   &__container {
-      display: flex;
-      flex-flow: column nowrap;
-      height: 100%;
-      padding: 0;
-      width: 100%
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    padding: 0;
+    width: 100%;
+    align-items: center;
   }
 
   &__cover,
@@ -54,6 +55,7 @@
     max-width: 100%;
     max-height: 100%;
     position: relative;
+    margin: auto;
     --pulse-cycle-bpm-factor: 1;
     --pulse-cycle-bpm: calc(var(--song-bpm-now-playing)/var(--pulse-cycle-bpm-factor));
     --pulse-cycle-duration: calc(var(--pulse-cycle-wave-duration)*var(--pulse-cycle-wave-count));
@@ -198,7 +200,8 @@
     padding: 10%;
 
     &__container {
-        flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      align-items: normal;
     }
 
     &__cover,
