@@ -112,6 +112,7 @@ export default {
       playerData: this.getEmptyPlayer(),
       feedbackDeferred: {},
       feedbackPrimary: true,
+      feedbackTimeout: null,
       colourPalette: '',
       swatches: []
     }
@@ -140,21 +141,31 @@ export default {
      * Make the network request to Google Forms to record a selected feedback button.
      */
     async sendFeedback(sentimentNumber, suggestion, songName) {
+      /* TODO: Extract this into a separate endpoint property */
       await fetch(`https://docs.google.com/forms/d/e/1FAIpQLSdllaBvx8fsxDINUnXaRtRnKjANfxCX--5RUl0ts7JVjhgOKQ/formResponse?submit=Submit&usp=pp_url&entry.1463587533=${sentimentNumber}&entry.545794514=${songName}&entry.1789954540=${suggestion}`)
     },
 
     async sendPrimaryFeedback(sentimentNumber) {
-      /* TODO: Extract this into a separate endpoint property */
       let songName = this.getSongNameAndArtist()
       this.feedbackDeferred = {
         song: songName,
         sentiment: sentimentNumber
       };
       this.feedbackPrimary = false
+
+      if (this.feedbackTimeout) {
+        clearTimeout(this.feedbackTimeout)
+        this.feedbackTimeout = null
+      }
+
+      this.feedbackTimeout = setTimeout(() => this.sendAdditionalFeedback(""), 10 * 1000)
     },
 
     async sendAdditionalFeedback(suggestion) {
-      /* TODO: Extract this into a separate endpoint property */
+      if (this.feedbackTimeout) {
+        clearTimeout(this.feedbackTimeout)
+        this.feedbackTimeout = null
+      }
       let d = this.feedbackDeferred
       this.feedbackDeferred = {}
       this.feedbackPrimary = true
