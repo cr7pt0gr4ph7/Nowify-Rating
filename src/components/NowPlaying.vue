@@ -242,6 +242,11 @@ export default {
         '--colour-background-now-playing',
         this.colourPalette.background
       )
+
+      document.documentElement.style.setProperty(
+        '--colour-secondary-background-now-playing',
+        this.colourPalette.backgroundSecondary
+      )
     },
 
     /**
@@ -335,14 +340,21 @@ export default {
         .map(colour => {
           return {
             text: palette[colour].getTitleTextColor(),
-            background: palette[colour].getHex()
+            background: palette[colour].getHex(),
+            backgroundSecondary: palette[colour].getHex()
           }
         })
 
       this.swatches = albumColours
 
-      this.colourPalette =
-        albumColours[Math.floor(Math.random() * albumColours.length)]
+      let mainColours = albumColours[Math.floor(Math.random() * albumColours.length)]
+      let secondaryColours = albumColours[Math.floor(Math.random() * albumColours.length)]
+      
+      this.colourPalette = {
+        text: mainColours.text,
+        background: mainColors.background,
+        backgroundSecondary: secondaryColors.background
+      }
 
       this.$nextTick(() => {
         this.setAppColours()
