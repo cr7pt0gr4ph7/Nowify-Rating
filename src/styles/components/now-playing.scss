@@ -199,6 +199,10 @@
         }
       }
 
+      .rating-option__text {
+        min-height: 35px;
+      }
+
       &:hover {
         background-color: var(--rating-color--primary);
       }
