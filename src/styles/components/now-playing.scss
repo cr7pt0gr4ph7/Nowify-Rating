@@ -232,7 +232,7 @@
       border-radius: 50%;
       clip-path: circle(47%);
       background-color: #000000;
-      font-size: max(3rem, min(5rem, 6vw));
+      font-size: calc(max(3rem, min(5rem, 6vw)));
 
       font-variation-settings:
         'FILL' 0,
