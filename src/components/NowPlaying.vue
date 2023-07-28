@@ -6,17 +6,19 @@
       :class="getNowPlayingClass()"
     >
       <div class="now-playing__container">
-        <div class="now-playing__cover now-playing__pulses">
-          <div class="now-playing__pulse wave1"></div>
-          <div class="now-playing__pulse wave2"></div>
-          <div class="now-playing__pulse wave3"></div>
-          <div class="now-playing__pulse wave4"></div>
-          <div class="now-playing__pulse wave5"></div>
-          <img
-            :src="player.trackAlbum.image"
-            :alt="player.trackTitle"
-            class="now-playing__image"
-          />
+        <div class="now-playing__cover">
+          <div class="now-playing__pulses">
+            <div class="now-playing__pulse wave1"></div>
+            <div class="now-playing__pulse wave2"></div>
+            <div class="now-playing__pulse wave3"></div>
+            <div class="now-playing__pulse wave4"></div>
+            <div class="now-playing__pulse wave5"></div>
+            <img
+              :src="player.trackAlbum.image"
+              :alt="player.trackTitle"
+              class="now-playing__image"
+            />
+          </div>
         </div>
         <div class="now-playing__details">
           <h1 class="now-playing__track" v-text="player.trackTitle"></h1>
