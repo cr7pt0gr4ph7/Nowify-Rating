@@ -293,7 +293,7 @@ export default {
           title: this.playerResponse.item.album.name,
           image: this.playerResponse.item.album.images[0].url
         },
-        trackBpm: clampBpmRange(this.playerResponse.audioFeatures.tempo)
+        trackBpm: this.clampBpmRange(this.playerResponse.audioFeatures.tempo)
       }
     },
 
