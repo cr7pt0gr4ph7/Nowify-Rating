@@ -158,7 +158,7 @@ export default {
         this.feedbackTimeout = null
       }
 
-      this.feedbackTimeout = setTimeout(() => sendAdditionalFeedback(""), 10 * 1000)
+      this.feedbackTimeout = setTimeout(() => this.sendAdditionalFeedback(""), 10 * 1000)
     },
 
     async sendAdditionalFeedback(suggestion) {
