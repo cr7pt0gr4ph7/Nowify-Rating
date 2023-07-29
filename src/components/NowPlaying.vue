@@ -88,6 +88,11 @@
         </div>
       </div>
     </div>
+    <div v-else class="now-playing" :class="getNowPlayingClass()">
+      <div class="now-playing__container">
+        <h1 class="now-playing__idle-heading">No music is playing 😔</h1>
+      </div>
+    </div>
   </div>
 </template>
 
