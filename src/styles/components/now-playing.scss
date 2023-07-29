@@ -44,6 +44,7 @@
   }
 
   &__cover {
+    align-self: stretch;
     display: flex;
     flex-flow: row nowrap;
     max-width: 400px;
@@ -58,10 +59,7 @@
   &__pulses {
     display: flex;
     aspect-ratio: 1 / 1;
-    max-width: 100%;
-    max-height: 100%;
     position: relative;
-    margin: auto;
     --pulse-cycle-bpm-factor: 1;
     --pulse-cycle-bpm: calc(var(--song-bpm-now-playing)/var(--pulse-cycle-bpm-factor));
     --pulse-cycle-duration: calc(var(--pulse-cycle-wave-duration)*var(--pulse-cycle-wave-count));
@@ -102,7 +100,7 @@
     box-shadow: 1px 1px 16px -2px rgba(0, 0, 0, .3);
     z-index: 2;
     position: relative;
-    object-fit: auto;
+    object-fit: contain;
   }
 
   &__details {
@@ -133,8 +131,8 @@
     max-width: 900px;
   }
 
-  @media only screen and (min-width: 767px) {
-    padding: 10%;
+  @media only screen and (min-width: 768px) {
+    padding: var(--padding-xl);
 
     &__container {
       flex-flow: row nowrap;
