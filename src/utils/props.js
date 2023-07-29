@@ -19,5 +19,12 @@ export default {
   props: {
     type: Object,
     default: () => ({})
+  },
+  player: {
+    type: Object,
+    default: () => ({
+      trackTitle: "",
+      trackArtists: []
+    })
   }
 }
