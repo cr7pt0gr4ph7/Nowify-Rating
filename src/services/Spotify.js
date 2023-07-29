@@ -50,7 +50,7 @@ export class SpotifyConnector {
    */
   handleExpiredToken() {
     this.stopPolling()
-    
+    this.requestRefreshToken()
   }
 
   setAuth(newAuth) {
