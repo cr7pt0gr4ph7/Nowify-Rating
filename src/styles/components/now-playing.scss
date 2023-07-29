@@ -45,8 +45,6 @@
 
   &__cover {
     align-self: stretch;
-    display: flex;
-    flex-flow: row nowrap;
     max-width: 400px;
   }
 
@@ -65,7 +63,14 @@
     --pulse-cycle-duration: calc(var(--pulse-cycle-wave-duration)*var(--pulse-cycle-wave-count));
     --pulse-cycle-wave-count: 5;
     --pulse-cycle-wave-duration: calc(60/var(--pulse-cycle-bpm)*1s);
-   }
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 100%;
+    max-width: 100%;
+  }
 
   &__pulse {
     animation: growAndFade var(--pulse-cycle-duration) infinite ease-out;
@@ -101,6 +106,8 @@
     z-index: 2;
     position: relative;
     object-fit: contain;
+    min-width: 0;
+    min-height: 0;
   }
 
   &__details {
