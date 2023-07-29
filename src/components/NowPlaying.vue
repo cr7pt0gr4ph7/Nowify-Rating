@@ -45,6 +45,10 @@ import props from '@/utils/props.js'
 export default {
   name: 'NowPlaying',
 
+  components: {
+    Feedback
+  },
+
   props: {
     auth: props.auth,
     endpoints: props.endpoints
