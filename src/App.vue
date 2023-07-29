@@ -46,12 +46,6 @@ export default {
         nowPlaying: 'me/player/currently-playing',
         audioFeatures: 'audio-features'
       },
-      player: {
-        playing: false,
-        trackArtists: [],
-        trackTitle: '',
-        trackAlbum: []
-      },
       storedId: ''
     }
   },
@@ -90,14 +84,6 @@ export default {
     requestRefreshTokens() {
       this.auth.status = false
     },
-
-    /**
-     * Update the player object.
-     * @param {Object} value - Spotify playr object.
-     */
-    updateCurrentTrack(value) {
-      this.player = value
-    }
   },
 
   watch: {
